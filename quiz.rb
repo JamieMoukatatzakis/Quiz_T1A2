@@ -33,13 +33,11 @@ gaming_questions = [
     Question.new(p8, 'a'),
     Question.new(p9, 'c')
 ]
+ 
+puts "Welcome, Please choose a Category.\n(1)Movies\n(2)Music\n(3)Gaming"
+user_input = gets.chomp.to_s
 
-
-
-numtest = 
-test = movie_questions
-
-def run_quiz(test)
+def run_quiz test
     answer = ""
     score = 0
     for question in test
@@ -58,4 +56,16 @@ def run_quiz(test)
     puts "Congratulations! You got #{score} from 3"
 end
 
-run_quiz(test)
+puts user_input
+test = ""
+if user_input == '1'
+    test = movie_questions
+    run_quiz(test)
+elsif user_input == '2'
+    test = music_questions
+    run_quiz(test)
+elsif user_input == '3'
+    test = gaming_questions
+    run_quiz(test)
+else puts "Error"   
+end
