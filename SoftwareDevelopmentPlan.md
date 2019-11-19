@@ -21,7 +21,7 @@ As the application is currently still in development and its features are still 
 
 ### Topic/Genre Selection
 
-One of my features is topic selection. The user can choose from a range of topics and the questions will be relevant to that topic. Currently this is achieved by creating a global Class called Questions. One of the properties/objects of this class is called prompt, which contains the question itself. One of the advantages of this, is I can place a numeric value onto each prompt instance. For example:
+One of my features is topic selection. The user can choose from a range of topics and the questions will be relevant to that topic. Currently this is achieved by creating a global Class called *Questions*. One of the properties/objects of this class is called *prompt*, which contains the question itself. One of the advantages of this, is I can place a numeric value onto each prompt instance. For example:
 
 * p1 = prompt1
 * p2 = prompt2
@@ -37,9 +37,9 @@ This allows me to create ranges for specified topics. For example:
 
 Currently, all questions are stored as individual strings. They are grouped together in arrays, which specify the topic they belong to and the corresponding answer to the question. From here they are parsed into the Question class which displays the question to the terminal and marks the users answer in real time.
 
-***User interaction with Terminal
+### User interaction with Terminal
 
-Another feature is the ability for the user to interact with the application via the terminal. On several occasions, the application will ask the user for a specific input. Based upon that input the application will react accordingly. For example:
+Another feature is the ability for the user to interact with the application via the terminal. On several occasions, the application will ask the user for a specific input. This input is stored into variables. Based upon that input and the value of those variables the application will react accordingly. For example:
 
 * When the application is launched, it will ask the user for a name. Once entered, the application will refer to the user by their entered name.
 
@@ -48,3 +48,9 @@ Another feature is the ability for the user to interact with the application via
 * When answering a question, the user will input *a* *b* or *c* for their answer.
 
 Currently, there is a little error handling to ensure the user enters an appropriate input. Specifically that an interger is entered when required and that an appropriate letter is also entered when required. If a wrong input is entered, the application will reask the question however this time it will display a prompt informing the user of the expected input. There is no error handling for when the user is asked for their name. 
+
+### Scoring the User
+
+After each section, the user is displayed their score. It's simply the amount of questions they got correct compared to the amount of questions asked. Currently there are only three questions per section so the questions asked is hard coded to the value three. The score however is tracked by a variable named *score*. When the user inputs there answer it's compared to the correct answer. If the values match, the users score is increased by one. If the values don't match, the users score remains the same.
+
+There are three possible sections plus a bonus question so the user is always scored against the value of ten unless they terminate the program early.
