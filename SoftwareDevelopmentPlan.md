@@ -17,3 +17,34 @@ This application is designed for anyone to use. However, In it's current state y
 As the application is currently still in development and its features are still limited, I expect it to only be used casually or as a one off launch. As more features are added, and its selection of topics increased, users may find themselves launching the app multiple times a week.
 
 
+## Features
+
+### Topic/Genre Selection
+
+One of my features is topic selection. The user can choose from a range of topics and the questions will be relevant to that topic. Currently this is achieved by creating a global Class called Questions. One of the properties/objects of this class is called prompt, which contains the question itself. One of the advantages of this, is I can place a numeric value onto each prompt instance. For example:
+
+* p1 = prompt1
+* p2 = prompt2
+* p3 = prompt3
+* and so on...
+
+This allows me to create ranges for specified topics. For example:
+
+* p1 - p3 = Movie Section
+* p4 - p6 = Music Section
+* p7 - p9 = Gaming Section
+* and so on...
+
+Currently, all questions are stored as individual strings. They are grouped together in arrays, which specify the topic they belong to and the corresponding answer to the question. From here they are parsed into the Question class which displays the question to the terminal and marks the users answer in real time.
+
+***User interaction with Terminal
+
+Another feature is the ability for the user to interact with the application via the terminal. On several occasions, the application will ask the user for a specific input. Based upon that input the application will react accordingly. For example:
+
+* When the application is launched, it will ask the user for a name. Once entered, the application will refer to the user by their entered name.
+
+* When selecting a topic, the user will enter the number that corresponds with that topic.
+
+* When answering a question, the user will input *a* *b* or *c* for their answer.
+
+Currently, there is a little error handling to ensure the user enters an appropriate input. Specifically that an interger is entered when required and that an appropriate letter is also entered when required. If a wrong input is entered, the application will reask the question however this time it will display a prompt informing the user of the expected input. There is no error handling for when the user is asked for their name. 
