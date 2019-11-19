@@ -54,3 +54,15 @@ Currently, there is a little error handling to ensure the user enters an appropr
 After each section, the user is displayed their score. It's simply the amount of questions they got correct compared to the amount of questions asked. Currently there are only three questions per section so the questions asked is hard coded to the value three. The score however is tracked by a variable named *score*. When the user inputs there answer it's compared to the correct answer. If the values match, the users score is increased by one. If the values don't match, the users score remains the same.
 
 There are three possible sections plus a bonus question so the user is always scored against the value of ten unless they terminate the program early.
+
+## User Interaction and Experience
+
+Included in the repositry will be a bash script file. Executing this script should launch the application. The application itself is pretty straight forward. Alot of the features are dealt with by the program itself and only require minimal user interaction such as entering input upon request. 
+
+The application itself requires some gems in order to function correctly. Although the program may run without these gems, the desired result will not be achieved without them. Included within the bash script will be terminal commands that should install the relevant gems before launching the application. If this fails, a list of required gems can be found in the relevant gem files, or from the help file. 
+
+If the user is unsure with how to interact with the application, they can consult the help file which provides an explanation of all the features the user is expected to encounter.
+
+If an error occurs, the program should prompt the user with details regarding said error. In most cases, this is simply an unexpected type of input. If an unknown error occurs the program will terminate and display the following:
+
+> Critical Error... Forced to Shutdown
