@@ -63,6 +63,14 @@ The application itself requires some gems in order to function correctly. Althou
 
 If the user is unsure with how to interact with the application, they can consult the help file which provides an explanation of all the features the user is expected to encounter.
 
-If an error occurs, the program should prompt the user with details regarding said error. In most cases, this is simply an unexpected type of input. If an unknown error occurs the program will terminate and display the following:
+If an error occurs, the program should prompt the user with details regarding said error. In most cases, this is simply an unexpected type of input. For example, if an interger is entered when a specific letter was expected, the following will be displayed:
+> Please enter a, b or c
+
+If an unknown error occurs the program will terminate and display the following:
 
 > Critical Error... Forced to Shutdown
+
+## Control Flow Diagram
+
+To be added
+
