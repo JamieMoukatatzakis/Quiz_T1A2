@@ -31,17 +31,22 @@ gaming_questions = [
     Question.new(p8, 'a'),
     Question.new(p9, 'c')
 ]
+
+def clear_terminal
+    system("clear")
+end
+
 puts "Welcome to Quiz_T1A2 =) Please enter your name..."
 name = gets.chomp.to_s
 topic_array = ['Movies','Music','Gaming']
 puts "Hi #{name}, Please choose a Category.\n(1)#{topic_array[0]}\n(2)Music\n(3)Gaming"
 user_input = gets.chomp.to_s
 
-
 def run_quiz test
     answer = ""
     score = 0
     for question in test
+        clear_terminal
         puts question.prompt
         answer = gets.chomp()
         until (answer == 'a' or answer == 'b'or answer =='c')
@@ -124,3 +129,5 @@ elsif result == ["Gaming"]
     test = gaming_questions
     run_quiz(test)
 end
+
+p score_overall
