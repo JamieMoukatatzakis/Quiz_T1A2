@@ -6,6 +6,7 @@ GEM
       rmagick (~> 2.15, >= 2.15.2)
       ruby-terminfo (~> 0.1, >= 0.1.1)
       tco (~> 0.1, >= 0.1.8)
+    colorize (0.8.1)
     docopt (0.6.1)
     rmagick (2.16.0)
     ruby-terminfo (0.1.1)
@@ -16,7 +17,8 @@ PLATFORMS
 
 DEPENDENCIES
   catpix (~> 0.2.0)
-  rmagick
+  colorize
+  rmagick (~> 2.16)
 
 BUNDLED WITH
    2.0.2

@@ -1,3 +1,5 @@
+require 'colorize'
+
 class Question
     attr_accessor :prompt, :answer
     def initialize(prompt, answer)
@@ -5,6 +7,11 @@ class Question
         @answer = answer
     end
 end
+
+movies, music, gaming = ARGV
+sARGV = ARGV
+ARGV.clear
+
 
 
 p1 = "What year was the first Star Wars movie, A New Hope released?\n(a)1977\n(b)1981\n(c)1984"
@@ -38,11 +45,12 @@ def clear_terminal
 end
 
 clear_terminal
-puts "Welcome to Quiz_T1A2 =) Please enter your name..."
+puts "Welcome to Quiz_T1A2 =) Please enter your name...".colorize(:blue)
 name = gets.chomp.to_s
 topic_array = ['Movies','Music','Gaming']
 clear_terminal
-puts "Hi #{name}, Please choose a Category.\n(1)#{topic_array[0]}\n(2)Music\n(3)Gaming"
+
+puts "Hi #{name}, Please choose a Category.\n(1)#{topic_array[0]}\n(2)Music\n(3)Gaming".colorize(:red)
 user_input = gets.chomp
 
 def run_quiz test
@@ -73,6 +81,11 @@ def run_quiz test
             puts "Thank you for playing Quiz_T1A2. Have a nice day =)"
             exit
         end   
+end
+
+if sARGV == "movies"
+    test = movie_questions
+    run_quiz(test)
 end
 
 test = ""
@@ -111,7 +124,7 @@ next_topic(user_input, topic_array)
 
 
 puts "Which of the remaining Topics would you like to do?"
-puts "(1)#{topic_array[0]}\n(2)#{topic_array[1]}\n(3)#{topic_array[2]}"
+puts "(1)#{topic_array[0]}\n(2)#{topic_array[1]}\n(3)#{topic_array[2]}".colorize(:red)
 user_input = gets.chomp
 
 test = ""
@@ -129,7 +142,7 @@ elsif user_input != ('1' or '2' or '3')
 end
 
 next_topic(user_input, topic_array)
-puts "(1)#{topic_array[0]}\n(2)#{topic_array[1]}\n(3)#{topic_array[2]}"
+puts "(1)#{topic_array[0]}\n(2)#{topic_array[1]}\n(3)#{topic_array[2]}".colorize(:red)
 
 result = topic_array.reject{|item| item.include?("completed")}
 clear_terminal
@@ -148,3 +161,6 @@ end
 clear_terminal
 
 puts "Thank you #{name} for playing Quiz_T1A2. Have a nice day =)"
+
+
+
