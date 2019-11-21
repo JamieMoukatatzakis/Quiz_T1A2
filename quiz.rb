@@ -58,7 +58,6 @@ def run_quiz test
     puts "If you would like to try another topic, Press 'y'. To Quit press any other key."
     toquit = gets.chomp
         if toquit == "y"
-            run_quiz(test)
         else 
             exit
         end   
@@ -77,3 +76,14 @@ elsif user_input == '3'
 elsif user_input != ('1' or '2' or '3')
     puts "Error... Terminating App. Please restart and select the category with the number 1 2 or 3"
 end
+
+if user_input == '1'
+    topic_array[0] = "Movies (You've already completed this)"
+elsif user_input == '2'
+    topic_array[1] = "Music (You've already completed this)"
+elsif user_input == '3'
+    topic_array[2] = "Gaming (You've already completed this)"
+end
+puts "Which of the remaining Topics would you like to do?"
+puts "(1)#{topic_array[0]}\n(2)#{topic_array[1]}"
+puts topic_array
