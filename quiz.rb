@@ -36,9 +36,11 @@ def clear_terminal
     system("clear")
 end
 
+clear_terminal
 puts "Welcome to Quiz_T1A2 =) Please enter your name..."
 name = gets.chomp.to_s
 topic_array = ['Movies','Music','Gaming']
+clear_terminal
 puts "Hi #{name}, Please choose a Category.\n(1)#{topic_array[0]}\n(2)Music\n(3)Gaming"
 user_input = gets.chomp.to_s
 
@@ -50,6 +52,7 @@ def run_quiz test
         puts question.prompt
         answer = gets.chomp()
         until (answer == 'a' or answer == 'b'or answer =='c')
+            clear_terminal
             puts question.prompt
             puts "Please enter a, b or c"
             answer = gets.chomp()
@@ -64,6 +67,7 @@ def run_quiz test
     toquit = gets.chomp
         if toquit == "y"
         else 
+            clear_terminal
             exit
         end   
 end
@@ -95,6 +99,7 @@ end
 
 next_topic(user_input, topic_array)
 
+
 puts "Which of the remaining Topics would you like to do?"
 puts "(1)#{topic_array[0]}\n(2)#{topic_array[1]}\n(3)#{topic_array[2]}"
 user_input = gets.chomp
@@ -117,6 +122,7 @@ next_topic(user_input, topic_array)
 puts "(1)#{topic_array[0]}\n(2)#{topic_array[1]}\n(3)#{topic_array[2]}"
 
 result = topic_array.reject{|item| item.include?("completed")}
+clear_terminal
 puts "#{result} is the last topic of this Application. Goodluck #{name}!"
 
 if result == ["Movies"]
@@ -129,5 +135,4 @@ elsif result == ["Gaming"]
     test = gaming_questions
     run_quiz(test)
 end
-
-p score_overall
+clear_terminal
