@@ -54,12 +54,12 @@ def run_quiz test
             score += 1
         end
     end
-    puts "Congratulations! You got #{score} from 3 for this section"
+    puts "Congratulations! You got #{score} from 3 for this Topic"
     puts "If you would like to try another topic, Press 'y'. To Quit press any other key."
     toquit = gets.chomp
         if toquit == "y"
-            puts "stuff to add"
-        else toquit == "n"
+            run_quiz(test)
+        else 
             exit
         end   
 end
