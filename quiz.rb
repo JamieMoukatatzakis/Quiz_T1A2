@@ -33,8 +33,9 @@ gaming_questions = [
     Question.new(p8, 'a'),
     Question.new(p9, 'c')
 ]
- 
-puts "Welcome, Please choose a Category.\n(1)Movies\n(2)Music\n(3)Gaming"
+puts "Welcome to Quiz_T1A2 =) Please enter your name..."
+name = gets.chomp.to_s
+puts "Hi #{name}, Please choose a Category.\n(1)Movies\n(2)Music\n(3)Gaming"
 user_input = gets.chomp.to_s
 
 
@@ -57,6 +58,7 @@ def run_quiz test
     puts "Congratulations! You got #{score} from 3 for this section"
 end
 
+def run_select
 test = ""
 if user_input == '1'
     test = movie_questions
@@ -67,5 +69,11 @@ elsif user_input == '2'
 elsif user_input == '3'
     test = gaming_questions
     run_quiz(test)
-else puts "Error"   
+elsif user_input > '3'
+    puts "Error. Please select the category with the number 1 2 or 3"
+    run_select  
+      
 end
+end
+
+run_select
