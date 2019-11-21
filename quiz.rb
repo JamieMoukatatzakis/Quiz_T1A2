@@ -6,8 +6,6 @@ class Question
     end
 end
 
-
-
 p1 = "What year was the first Star Wars movie, A New Hope released?\n(a)1977\n(b)1981\n(c)1984"
 p2 = "What is Arnold Schwarzenegger's most famous role? \n(a)Conan\n(b)The Terminator\n(c)Dutch"
 p3 = "What animal is Nemo from the movie Finding Nemo? \n(a)Dog\n(b)Rabbit\n(c)Fish"
@@ -35,7 +33,8 @@ gaming_questions = [
 ]
 puts "Welcome to Quiz_T1A2 =) Please enter your name..."
 name = gets.chomp.to_s
-puts "Hi #{name}, Please choose a Category.\n(1)Movies\n(2)Music\n(3)Gaming"
+topic_array = ['Movies','Music','Gaming']
+puts "Hi #{name}, Please choose a Category.\n(1)#{topic_array[0]}\n(2)Music\n(3)Gaming"
 user_input = gets.chomp.to_s
 
 
@@ -56,9 +55,15 @@ def run_quiz test
         end
     end
     puts "Congratulations! You got #{score} from 3 for this section"
+    puts "If you would like to try another topic, Press 'y'. To Quit press any other key."
+    toquit = gets.chomp
+        if toquit == "y"
+            puts "stuff to add"
+        else toquit == "n"
+            exit
+        end   
 end
 
-def run_select
 test = ""
 if user_input == '1'
     test = movie_questions
@@ -69,11 +74,6 @@ elsif user_input == '2'
 elsif user_input == '3'
     test = gaming_questions
     run_quiz(test)
-elsif user_input > '3'
-    puts "Error. Please select the category with the number 1 2 or 3"
-    run_select  
-      
+elsif user_input != ('1' or '2' or '3')
+    puts "Error... Terminating App. Please restart and select the category with the number 1 2 or 3"
 end
-end
-
-run_select
