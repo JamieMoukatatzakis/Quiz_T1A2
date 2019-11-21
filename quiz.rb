@@ -85,5 +85,5 @@ elsif user_input == '3'
     topic_array[2] = "Gaming (You've already completed this)"
 end
 puts "Which of the remaining Topics would you like to do?"
-puts "(1)#{topic_array[0]}\n(2)#{topic_array[1]}"
-puts topic_array
+puts "(1)#{topic_array[0]}\n(2)#{topic_array[1]}\n(3)#{topic_array[2]"
+
