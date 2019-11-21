@@ -85,10 +85,28 @@ elsif user_input == '2'
 elsif user_input == '3'
     topic_array[2] = "Gaming (You've already completed this)"
 end
+user_input = ""
 end
 
 next_topic(user_input, topic_array)
 
 puts "Which of the remaining Topics would you like to do?"
 puts "(1)#{topic_array[0]}\n(2)#{topic_array[1]}\n(3)#{topic_array[2]}"
+user_input = gets.chomp
 
+test = ""
+if user_input == '1'
+    test = movie_questions
+    run_quiz(test)
+elsif user_input == '2'
+    test = music_questions
+    run_quiz(test)
+elsif user_input == '3'
+    test = gaming_questions
+    run_quiz(test)
+elsif user_input != ('1' or '2' or '3')
+    puts "Error... Terminating App. Please restart and select the category with the number 1 2 or 3"
+end
+
+next_topic(user_input, topic_array)
+puts "(1)#{topic_array[0]}\n(2)#{topic_array[1]}\n(3)#{topic_array[2]}"
