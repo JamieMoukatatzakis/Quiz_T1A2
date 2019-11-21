@@ -77,6 +77,7 @@ elsif user_input != ('1' or '2' or '3')
     puts "Error... Terminating App. Please restart and select the category with the number 1 2 or 3"
 end
 
+def next_topic(user_input, topic_array)
 if user_input == '1'
     topic_array[0] = "Movies (You've already completed this)"
 elsif user_input == '2'
@@ -84,6 +85,10 @@ elsif user_input == '2'
 elsif user_input == '3'
     topic_array[2] = "Gaming (You've already completed this)"
 end
+end
+
+next_topic(user_input, topic_array)
+
 puts "Which of the remaining Topics would you like to do?"
-puts "(1)#{topic_array[0]}\n(2)#{topic_array[1]}\n(3)#{topic_array[2]"
+puts "(1)#{topic_array[0]}\n(2)#{topic_array[1]}\n(3)#{topic_array[2]}"
 
