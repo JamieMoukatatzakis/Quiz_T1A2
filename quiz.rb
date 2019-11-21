@@ -110,3 +110,17 @@ end
 
 next_topic(user_input, topic_array)
 puts "(1)#{topic_array[0]}\n(2)#{topic_array[1]}\n(3)#{topic_array[2]}"
+
+result = topic_array.reject{|item| item.include?("completed")}
+puts "#{result} is the last topic of this Application. Goodluck #{name}!"
+
+if result == ["Movies"]
+    test = movie_questions
+    run_quiz(test)
+elsif result == ["Music"]
+    test = music_questions
+    run_quiz(test)
+elsif result == ["Gaming"]
+    test = gaming_questions
+    run_quiz(test)
+end
