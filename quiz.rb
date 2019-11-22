@@ -1,6 +1,20 @@
 require 'colorize'
 require 'artii'
 
+def clear_terminal
+    system("clear")
+end
+
+tempARGV = ARGV
+help = tempARGV[0]
+ARGV.clear
+
+if help == "-h"
+    clear_terminal
+    exec 'cat "help.md"'
+    
+end
+
 class Question
     attr_accessor :prompt, :answer
     def initialize(prompt, answer)
@@ -35,10 +49,6 @@ gaming_questions = [
     Question.new(p8, 'a'),
     Question.new(p9, 'c')
 ]
-
-def clear_terminal
-    system("clear")
-end
 
 appname = Artii::Base.new
 clear_terminal
