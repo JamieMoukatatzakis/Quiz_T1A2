@@ -1,4 +1,5 @@
 require 'colorize'
+require 'artii'
 
 class Question
     attr_accessor :prompt, :answer
@@ -8,9 +9,6 @@ class Question
     end
 end
 
-movies, music, gaming = ARGV
-sARGV = ARGV
-ARGV.clear
 
 p1 = "What year was the first Star Wars movie, A New Hope released?\n(a)1977\n(b)1981\n(c)1984"
 p2 = "What is Arnold Schwarzenegger's most famous role? \n(a)Conan\n(b)The Terminator\n(c)Dutch"
@@ -42,7 +40,9 @@ def clear_terminal
     system("clear")
 end
 
+appname = Artii::Base.new
 clear_terminal
+puts appname.asciify("Q u i z  T 1 A 2")
 puts "Welcome to Quiz_T1A2 =) Please enter your name...".colorize(:light_blue)
 name = gets.chomp.to_s
 topic_array = ['Movies','Music','Gaming']
