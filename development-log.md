@@ -15,3 +15,6 @@ Doing a quiz has proved to be a bit harder than expected. On the surface it seem
 I might have shot myself in the foot. The approach I have taken has left me with code that is definetly not DRY. Unless i rebuild the whole application with a different approach I don't currently see a way to fix this. My best bet currently is to get to a working final draft and see if I can cut back then.
 
 Basic error handling is done and the goal currently is to work towards a final draft by November 20th.
+
+## 20th November 2020
+Seriously Underestimated just how much work was required. The approach I have taken works very well for One topic, but once the user strings these topics together it begins to fall apart. Currently at this time I see no easy fix. I assume a full code rebuild would be necessary, however given time constraints this is not an option. Although the App runs, there are a few major errors that can occur based on user input. I can fix most of these, however there will be a series of user inputs at certains points of the App that will crash it that I currently have no proper fix for. For the time being I'm just wrapping these into a BeginRescueEnd and placing full trust into the users hands. 
