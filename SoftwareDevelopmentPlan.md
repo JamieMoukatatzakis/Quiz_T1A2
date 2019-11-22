@@ -72,5 +72,5 @@ If an unknown error occurs the program will terminate and display the following:
 
 ## Control Flow Diagram
 
-[Control Flow Diagram](./ControlFlow.png) 
+![Control Flow Diagram](ControlFlow.png) 
 
