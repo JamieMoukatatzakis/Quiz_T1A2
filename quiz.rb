@@ -1,20 +1,6 @@
 require 'colorize'
 require 'artii'
 
-def clear_terminal
-    system("clear")
-end
-
-tempARGV = ARGV
-help = tempARGV[0]
-ARGV.clear
-
-if help == "-h"
-    clear_terminal
-    exec 'cat "help.md"'
-    
-end
-
 class Question
     attr_accessor :prompt, :answer
     def initialize(prompt, answer)
@@ -23,43 +9,9 @@ class Question
     end
 end
 
-
-p1 = "What year was the first Star Wars movie, A New Hope released?\n(a)1977\n(b)1981\n(c)1984"
-p2 = "What is Arnold Schwarzenegger's most famous role? \n(a)Conan\n(b)The Terminator\n(c)Dutch"
-p3 = "What animal is Nemo from the movie Finding Nemo? \n(a)Dog\n(b)Rabbit\n(c)Fish"
-p4 = "What song has spent the most time on Billboards Number 1 Spot? \n(a)Despacito\n(b)Old Town Road\n(c)One Sweet Day"
-p5 = "Which artist has the most Number 1 singles? \n(a)Elvis Presley\n(b)Michael Jackson\n(c)The Beatles"
-p6 = "What is the most sold album world wide?\n(a)Back in Black by AC/DC\n(b)Thriller by Michael Jackson\n(c)Bat out of Hell by Meatloaf"
-p7 = "What is the most sold gaming console of all time?\n(a)Xbox 360\n(b)Nintendo Wii\n(c)Playstation 2"
-p8 = "Who is the most recognised video game character of all time?\n(a)Mario\n(b)Solid Snake\n(c)Pac-Man"
-p9 = "How many ghosts are there in Pac-Man?\n(a)2\n(b)3\n(c)4"
-
-movie_questions = [
-    Question.new(p1, 'a'),
-    Question.new(p2, 'b'),
-    Question.new(p3, 'c')
-]
-music_questions = [
-    Question.new(p4, 'b'),
-    Question.new(p5, 'c'),
-    Question.new(p6, 'b')
-]
-gaming_questions = [
-    Question.new(p7, 'c'),
-    Question.new(p8, 'a'),
-    Question.new(p9, 'c')
-]
-
-appname = Artii::Base.new
-clear_terminal
-puts appname.asciify("Q u i z  T 1 A 2")
-puts "Welcome to Quiz_T1A2 =) Please enter your name...".colorize(:light_blue)
-name = gets.chomp.to_s
-topic_array = ['Movies','Music','Gaming']
-clear_terminal
-
-puts "Hi #{name}, Please choose a Category.\n(1)#{topic_array[0]}\n(2)Music\n(3)Gaming".colorize(:magenta)
-user_input = gets.chomp
+def clear_terminal
+    system("clear")
+end
 
 def run_quiz test
     answer = ""
@@ -92,6 +44,72 @@ def run_quiz test
             exit
         end   
 end
+
+tempARGV = ARGV
+help = tempARGV[0]
+ARGV.clear
+
+if help == "-h"
+    clear_terminal
+    exec 'cat "help.md"'
+end
+
+
+
+p1 = "What year was the first Star Wars movie, A New Hope released?\n(a)1977\n(b)1981\n(c)1984"
+p2 = "What is Arnold Schwarzenegger's most famous role? \n(a)Conan\n(b)The Terminator\n(c)Dutch"
+p3 = "What animal is Nemo from the movie Finding Nemo? \n(a)Dog\n(b)Rabbit\n(c)Fish"
+p4 = "What song has spent the most time on Billboards Number 1 Spot? \n(a)Despacito\n(b)Old Town Road\n(c)One Sweet Day"
+p5 = "Which artist has the most Number 1 singles? \n(a)Elvis Presley\n(b)Michael Jackson\n(c)The Beatles"
+p6 = "What is the most sold album world wide?\n(a)Back in Black by AC/DC\n(b)Thriller by Michael Jackson\n(c)Bat out of Hell by Meatloaf"
+p7 = "What is the most sold gaming console of all time?\n(a)Xbox 360\n(b)Nintendo Wii\n(c)Playstation 2"
+p8 = "Who is the most recognised video game character of all time?\n(a)Mario\n(b)Solid Snake\n(c)Pac-Man"
+p9 = "How many ghosts are there in Pac-Man?\n(a)2\n(b)3\n(c)4"
+
+movie_questions = [
+    Question.new(p1, 'a'),
+    Question.new(p2, 'b'),
+    Question.new(p3, 'c')
+]
+music_questions = [
+    Question.new(p4, 'b'),
+    Question.new(p5, 'c'),
+    Question.new(p6, 'b')
+]
+gaming_questions = [
+    Question.new(p7, 'c'),
+    Question.new(p8, 'a'),
+    Question.new(p9, 'c')
+]
+
+if help == "movies"
+    test = movie_questions
+    run_quiz(test)
+    exit
+end
+
+if help == "music"
+    test = music_questions
+    run_quiz(test)
+    exit
+end
+
+if help == "gaming"
+    test = gaming_questions
+    run_quiz(test)
+    exit
+end
+
+appname = Artii::Base.new
+clear_terminal
+puts appname.asciify("Q u i z  T 1 A 2")
+puts "Welcome to Quiz_T1A2 =) Please enter your name...".colorize(:light_blue)
+name = gets.chomp.to_s
+topic_array = ['Movies','Music','Gaming']
+clear_terminal
+
+puts "Hi #{name}, Please choose a Category.\n(1)#{topic_array[0]}\n(2)Music\n(3)Gaming".colorize(:magenta)
+user_input = gets.chomp
 
 test = ""
 if user_input == '1'
