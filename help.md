@@ -15,8 +15,6 @@ Assuming your computer meets all the dependencies listed below, at this stage, t
 
 
 
-
-
 DEPENDENCIES
 
 Gems required --->  artii (2.1.2) and  colorize (0.8.1)
@@ -32,8 +30,23 @@ Hardware ---> A working computer that meets the above dependencies and has enoug
 
 
 
-
-
 MAIN FEATURES
 
 The main features the user is likely to encounter revolve mostly with user input via the keyboard. This means, simply entering a key or supplying an input based off of the instuctions of the application. All other features are visible to the user, but they are not directly interactive with the user. 
+
+
+
+
+COMMAND LINE ARGUMENTS
+
+Placing the -h flag after launching the app will print this help page to your terminal.
+
+Supplying any of the three current topics as a command line argument, will currently enter the user straight into the quiz section of the app for the specific topic they picked.
+
+Current Topics = movies, music and gaming
+
+
+
+
+Thank you for trying out QUIZ_T1A2
+Jamie
