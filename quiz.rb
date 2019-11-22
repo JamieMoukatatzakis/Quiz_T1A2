@@ -54,6 +54,7 @@ user_input = gets.chomp
 def run_quiz test
     answer = ""
     score = 0
+    appname = Artii::Base.new
     for question in test
         clear_terminal
         puts question.prompt.colorize(:yellow)
@@ -76,14 +77,10 @@ def run_quiz test
         if toquit == "y"
         else 
             clear_terminal
+            puts appname.asciify("B Y E   B Y E")
             puts "Thank you for playing Quiz_T1A2. Have a nice day =)"
             exit
         end   
-end
-
-if sARGV == "movies"
-    test = movie_questions
-    run_quiz(test)
 end
 
 test = ""
@@ -158,3 +155,4 @@ end
 clear_terminal
 
 puts "Thank you #{name} for playing Quiz_T1A2. Have a nice day =)"
+puts appname.asciify("B Y E   B Y E")
